@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+  <script>
+    const socket = io("http://localhost:3000");
+
+    socket.on("connect", () => {
+      console.log("Connected with ID:", socket.id);
+      socket.emit("register", "user223"); // simulate login
+    });
+  </script>
+</body>
+</html>
