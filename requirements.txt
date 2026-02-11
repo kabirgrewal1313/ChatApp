@@ -1,0 +1,29 @@
+# Environment requirements (not Python packages)
+
+# Runtime
+- Node.js >= 18
+- npm >= 9
+
+# Services
+- MongoDB Atlas cluster (or any reachable MongoDB instance)
+
+# Backend setup
+- cd backend
+- npm install
+- required env vars in backend/.env:
+  - MONGODB_URI=<your_mongodb_connection_string>
+  - PORT=3000
+  - JWT_SECRET=<a_long_random_secret>
+  - (optional) CLIENT_ORIGIN=<frontend_url, e.g. http://localhost:5173>
+
+# Frontend setup
+- cd frontend
+- npm install
+- required env vars in frontend/.env:
+  - VITE_API_URL=http://localhost:3000
+  - (optional) VITE_SOCKET_URL=http://localhost:3000
+
+# Run locally
+- backend: cd backend && npm run dev
+- frontend: cd frontend && npm run dev
+
