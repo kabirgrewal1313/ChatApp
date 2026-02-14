@@ -16,7 +16,7 @@ console.log(SOCKET_URL);
     return socket;
   }
 
-  socket = io(import.meta.env.SERVER_IP, {
+  socket = io(import.meta.env.VITE_SERVER_IP, {
     auth: {
       token: accessToken
     }
