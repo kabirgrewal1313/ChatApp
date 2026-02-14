@@ -6,7 +6,7 @@ const API_BASE_URL =
   import.meta.env.VITE_API_URL ||
   import.meta.env.VITE_API_BASE_URL ||
   "http://localhost:3000";
-
+console.log(API_BASE_URL)
 function App() {
   const [mode, setMode] = useState("login"); // 'login' | 'signup'
   const [authLoading, setAuthLoading] = useState(false);
@@ -86,7 +86,6 @@ function App() {
   }, [accessToken, activeUserId, user]);
 
   const isAuthenticated = useMemo(() => !!accessToken && !!user, [accessToken, user]);
-
   const handleAuthSubmit = async (event) => {
     event.preventDefault();
     setAuthError("");
