@@ -3,7 +3,7 @@ import { io } from "socket.io-client";
 let socket;
 
 export const connectSocket = (accessToken) => {
-  socket = io("http://localhost:3000", {
+  socket = io({
     auth: {
       token: accessToken
     }

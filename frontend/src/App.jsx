@@ -97,7 +97,7 @@ function App() {
     const username = formData.get("username");
 
     try {
-      const res = await fetch(`${API_BASE_URL}/api/auth/${mode}`, {
+      const res = await fetch(`${API_BASE_URL}/auth/${mode}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -131,7 +131,7 @@ function App() {
     setUsersLoading(true);
     setChatError("");
     try {
-      const res = await fetch(`${API_BASE_URL}/api/chat/users`, {
+      const res = await fetch(`${API_BASE_URL}/chat/users`, {
         headers: {
           Authorization: `Bearer ${accessToken}`
         }
@@ -153,7 +153,7 @@ function App() {
     setChatError("");
     try {
       const res = await fetch(
-        `${API_BASE_URL}/api/chat/messages/${otherUserId}`,
+        `${API_BASE_URL}/chat/messages/${otherUserId}`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`

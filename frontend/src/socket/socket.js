@@ -9,13 +9,14 @@ const SOCKET_URL =
   "http://localhost:3000";
 
 export const connectSocket = (accessToken) => {
+console.log(SOCKET_URL);
   if (!accessToken) throw new Error("Access token required to connect socket");
 
   if (socket && socket.connected) {
     return socket;
   }
 
-  socket = io(SOCKET_URL, {
+  socket = io("http://16.171.238.207", {
     auth: {
       token: accessToken
     }
