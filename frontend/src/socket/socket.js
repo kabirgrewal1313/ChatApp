@@ -11,12 +11,12 @@ const SOCKET_URL =
 export const connectSocket = (accessToken) => {
 console.log(SOCKET_URL);
   if (!accessToken) throw new Error("Access token required to connect socket");
-
+  
   if (socket && socket.connected) {
     return socket;
   }
 
-  socket = io("http://16.171.238.207", {
+  socket = io(import.meta.env.SERVER_IP, {
     auth: {
       token: accessToken
     }
