@@ -3,7 +3,7 @@
 <body>
   <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
   <script>
-    const socket = io("/api");
+    const socket = io();
 
     socket.on("connect", () => {
       console.log("Connected with ID:", socket.id);
